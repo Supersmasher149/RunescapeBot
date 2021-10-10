@@ -6,7 +6,7 @@ import win32con
 import numpy as np
 from matplotlib import pyplot as plt
 from vision import Vision
-
+import test
 import clickmethouds
 from WindowCapture import WindowCapture
 from clickmethouds import *
@@ -23,16 +23,17 @@ if __name__ == '__main__':
     # initialize the WindowCapture class
     wincap = WindowCapture('RuneScape')
 
-    vision_empty = Vision('pics/EmptyInventory.png')
+    # vision_empty = Vision('pics/EmptyInventory.png')
 
     while True:
 
         # get an updated image of the game
         screenshot = wincap.get_screenshot()
 
-        points = vision_empty.find(screenshot, 0.7, 'points')
+        # points = vision_empty.find(screenshot, 0.7, 'points')
+        x = test.testttt(screenshot)
 
-        cv.imshow('Computer Vision', screenshot)
+        cv.imshow('Computer Vision', x)
 
         # press 'q' with the output window focused to exit.
         # waits 1 ms every loop to process key presses
